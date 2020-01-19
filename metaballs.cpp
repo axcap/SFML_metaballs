@@ -17,7 +17,7 @@
 #define center_y HEIGHT / 2
 
 sf::Uint8        *pixels  = new sf::Uint8[WIDTH * HEIGHT * 4];
-sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Variables Demo");
+sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "2D Metaballs");
 
 class Circle : sf::CircleShape {
 public:
@@ -83,7 +83,7 @@ float dist(int ax, int ay, int bx, int by){
 int distance_to_color(int x, int y, Circle* circ){
   static float d;
   d = dist(x, y, circ->x, circ->y);
-  float col = 300 * circ->r * circ->r / d;
+  float col = 3000 * circ->r * circ->r / d;
   //float col = 10 * circ->r * circ->r / d;
   return col;
 }
